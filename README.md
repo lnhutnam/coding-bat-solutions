@@ -13,7 +13,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Apache License][license-shield]][license-url]
 
-Programming language: ![](https://img.shields.io/github/languages/count/nhutnamhcmus/coding-bat-solutions) with ![](https://img.shields.io/github/languages/top/nhutnamhcmus/coding-bat-solutions)
+Programming language: ![](https://img.shields.io/github/languages/count/nhutnamhcmus/coding-bat-solutions?style=flat-square) with ![](https://img.shields.io/github/languages/top/nhutnamhcmus/coding-bat-solutions?style=flat-square)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
