@@ -11,7 +11,7 @@ import unittest
 
 
 def not_string(str):
-
+    return ("not " + str, str)[str[:3] == "not"]
 
 class Test(unittest.TestCase):
     pass
