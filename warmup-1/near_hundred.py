@@ -11,7 +11,7 @@ import unittest
 
 
 def near_hundred(n):
-    pass
+    return (abs(100 - n) < 10) or (abs(200 - n) < 10)
 
 
 class Test(unittest.TestCase):
