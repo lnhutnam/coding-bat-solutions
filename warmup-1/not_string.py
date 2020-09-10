@@ -11,10 +11,11 @@ import unittest
 
 
 def not_string(str):
-    pass
+
 
 class Test(unittest.TestCase):
     pass
 
 if __name__ == "__main__":
     unittest.main()
+
