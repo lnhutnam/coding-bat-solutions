@@ -10,9 +10,12 @@ front_back('ab') → 'ba'
 import unittest
 
 
+##########################
 def front_back(str):
-    pass
+  return str[len(str)] + str[1:] + str[0]
 
+
+############# TESTING CLASS ############# 
 class Test(unittest.TestCase):
     pass
 
