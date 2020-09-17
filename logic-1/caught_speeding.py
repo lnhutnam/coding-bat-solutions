@@ -13,6 +13,7 @@ caught_speeding(65, True) → 0
 
 import unittest
 
+
 def caught_speeding(speed, is_birthday):
     return (((0, 1)[61 <= speed <= 80], 2)[speed >= 81], ((0, 1)[66 <= speed <= 85], 2)[speed >= 86])[is_birthday]
 
@@ -43,7 +44,7 @@ class MyTest(unittest.TestCase):
         self.assertEqual(caught_speeding(75, False), 1)
 
     def test_case_08(self):
-        self.assertEqual(caught_speeding(75, True), 1)   
+        self.assertEqual(caught_speeding(75, True), 1)
 
     def test_case_09(self):
         self.assertEqual(caught_speeding(40, False), 0)
@@ -52,11 +53,8 @@ class MyTest(unittest.TestCase):
         self.assertEqual(caught_speeding(40, True), 0)
 
     def test_case_11(self):
-        self.assertEqual(caught_speeding(90, False), 2) 
+        self.assertEqual(caught_speeding(90, False), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
-
-
-
-
