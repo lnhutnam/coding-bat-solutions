@@ -15,6 +15,7 @@
 
 Programming language: ![](https://img.shields.io/github/languages/count/nhutnamhcmus/coding-bat-solutions?style=flat-square) with ![](https://img.shields.io/github/languages/top/nhutnamhcmus/coding-bat-solutions?style=flat-square)
 
+Build: [![CircleCI](https://circleci.com/gh/nhutnamhcmus/coding-bat-solutions/tree/master.svg?style=svg)](https://circleci.com/gh/nhutnamhcmus/coding-bat-solutions/tree/master)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
