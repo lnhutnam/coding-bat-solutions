@@ -20,12 +20,15 @@ from solutions.solutions import love6
 from solutions.solutions import near_ten
 from solutions.solutions import sorta_sum
 from solutions.solutions import squirrel_play
+
 # logic 2
 from solutions.solutions import make_bricks
 from solutions.solutions import lone_sum
 from solutions.solutions import lucky_sum
 from solutions.solutions import no_teen_sum
 from solutions.solutions import round_sum
+from solutions.solutions import close_far
+from solutions.solutions import make_chocolate
 
 # string 1
 
@@ -44,6 +47,7 @@ from solutions.solutions import parrot_trouble
 from solutions.solutions import pos_neg
 from solutions.solutions import sleep_in
 from solutions.solutions import sum_double
+
 # warmup 2
 
 # =======================================================================================================================================
@@ -721,6 +725,116 @@ class TestRoundSum(unittest.TestCase):
         self.assertEqual(round_sum(12, 10, 24), 40)
 
 
+class TestCloseFar(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(close_far(1, 2, 10), True)
+
+    def test_case_01(self):
+        self.assertEqual(close_far(1, 2, 3), False)
+
+    def test_case_02(self):
+        self.assertEqual(close_far(4, 1, 3), True)
+
+    def test_case_03(self):
+        self.assertEqual(close_far(4, 5, 3), False)
+
+    def test_case_04(self):
+        self.assertEqual(close_far(4, 3, 5), False)
+
+    def test_case_05(self):
+        self.assertEqual(close_far(-1, 10, 0), True)
+
+    def test_case_06(self):
+        self.assertEqual(close_far(0, -1, 10), True)
+
+    def test_case_07(self):
+        self.assertEqual(close_far(10, 10, 8), True)
+
+    def test_case_08(self):
+        self.assertEqual(close_far(10, 8, 9), False)
+
+    def test_case_09(self):
+        self.assertEqual(close_far(8, 9, 10), False)
+
+    def test_case_10(self):
+        self.assertEqual(close_far(8, 9, 7), False)
+
+    def test_case_11(self):
+        self.assertEqual(close_far(8, 6, 9), True)
+
+
+class TestMakeChocolate(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(make_chocolate(4, 1, 9), 4)
+
+    def test_case_01(self):
+        self.assertEqual(make_chocolate(4, 1, 10), -1)
+
+    def test_case_02(self):
+        self.assertEqual(make_chocolate(4, 1, 7), 2)
+
+    def test_case_03(self):
+        self.assertEqual(make_chocolate(6, 2, 7), 2)
+
+    def test_case_04(self):
+        self.assertEqual(make_chocolate(4, 1, 5), 0)
+
+    def test_case_05(self):
+        self.assertEqual(make_chocolate(4, 1, 4), 4)
+
+    def test_case_05(self):
+        self.assertEqual(make_chocolate(5, 4, 9), 4)
+
+    def test_case_06(self):
+        self.assertEqual(make_chocolate(9, 3, 18), 3)
+
+    def test_case_07(self):
+        self.assertEqual(make_chocolate(3, 1, 9), -1)
+
+    def test_case_08(self):
+        self.assertEqual(make_chocolate(1, 2, 7), -1)
+
+    def test_case_09(self):
+        self.assertEqual(make_chocolate(1, 2, 6), 1)
+
+    def test_case_10(self):
+        self.assertEqual(make_chocolate(1, 2, 5), 0)
+
+    def test_case_11(self):
+        self.assertEqual(make_chocolate(6, 1, 10), 5)
+
+    def test_case_12(self):
+        self.assertEqual(make_chocolate(6, 1, 11), 6)
+
+    def test_case_13(self):
+        self.assertEqual(make_chocolate(6, 1, 12), -1)
+
+    def test_case_14(self):
+        self.assertEqual(make_chocolate(6, 1, 13), -1)
+
+    def test_case_15(self):
+        self.assertEqual(make_chocolate(6, 2, 10), 0)
+
+    def test_case_16(self):
+        self.assertEqual(make_chocolate(6, 2, 11), 1)
+
+    def test_case_17(self):
+        self.assertEqual(make_chocolate(6, 2, 12), 2)
+
+    def test_case_18(self):
+        self.assertEqual(make_chocolate(60, 100, 550), 50)
+
+    def test_case_19(self):
+        self.assertEqual(make_chocolate(1000, 1000000, 5000006), 6)
+
+    def test_case_20(self):
+        self.assertEqual(make_chocolate(7, 1, 12), 7)
+
+    def test_case_21(self):
+        self.assertEqual(make_chocolate(7, 1, 13), -1)
+
+    def test_case_22(self):
+        self.assertEqual(make_chocolate(7, 2, 13), 3)
 
 # string 1 tesing
 # =======================================================================================================================================

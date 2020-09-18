@@ -273,7 +273,35 @@ def round10(num):
 def round_sum(a, b, c):
     return round10(a) + round10(b) + round10(c)
 
-    
+
+# =======================================================================================================================================
+"""
+Given three ints, a b c, return True if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more. Note: abs(num) computes the absolute value of a number.
+
+close_far(1, 2, 10) → True
+close_far(1, 2, 3) → False
+close_far(4, 1, 3) → True
+"""
+
+
+def close_far(a, b, c):
+    return (abs(b-a) <= 1 and abs(c-a) >= 2 and abs(c-b) >= 2 or abs(c-a) <= 1 and abs(b-a) >= 2 and abs(b-c) >= 2)
+
+
+# =======================================================================================================================================
+"""
+We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). 
+Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.
+
+
+make_chocolate(4, 1, 9) → 4
+make_chocolate(4, 1, 10) → -1
+make_chocolate(4, 1, 7) → 2
+"""
+
+
+def make_chocolate(small, big, goal):
+    return ((-1, goal - big * 5)[(goal - big * 5) <= small], (-1, (goal - (goal // 5) * 5))[(goal - (goal // 5) * 5) <= small])[goal // 5 <= big]
 # =======================================================================================================================================
 # string 1
 
