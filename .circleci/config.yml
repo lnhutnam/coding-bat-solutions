@@ -32,9 +32,6 @@ workflows:
   tests:
     jobs:
       - build
-      - test-add:
-          requires:
-            - build
-      - test-sup:
+      - test-sum:
           requires:
             - build
