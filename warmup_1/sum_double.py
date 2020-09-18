@@ -1,3 +1,10 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
+
 """
 Given two int values, return their sum. 
 Unless the two values are the same, then return double their sum.
@@ -42,3 +49,4 @@ class MyTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

@@ -1,5 +1,11 @@
-"""
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
 
+
+"""
 We have two monkeys, a and b, and the parameters a_smile and b_smile indicate if each is smiling. We are in trouble if they are both smiling or if neither of them is smiling. Return True if we are in trouble.
 
 
@@ -30,3 +36,5 @@ class MyTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

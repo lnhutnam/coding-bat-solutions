@@ -1,6 +1,11 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
 """
 Given a non-empty string and an int n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive).
-
 
 missing_char('kitten', 1) → 'ktten'
 missing_char('kitten', 0) → 'itten'
@@ -48,3 +53,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

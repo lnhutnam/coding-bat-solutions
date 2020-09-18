@@ -1,3 +1,10 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
+
 """
 Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
 
@@ -53,3 +60,4 @@ class MyTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

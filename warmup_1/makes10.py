@@ -1,3 +1,9 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
 """
 Given 2 ints, a and b, return True if one if them is 10 or if their sum is 10.
 
@@ -45,3 +51,4 @@ class Testing(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

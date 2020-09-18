@@ -1,3 +1,10 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
+
 """
 The parameter weekday is True if it is a weekday, and the parameter vacation is True if we are on vacation. 
 We sleep in if it is not a weekday or we're on vacation. Return True if we sleep in.
@@ -27,3 +34,4 @@ print(sleep_in(False, True))
 print("Start testing")
 if __name__ == "__main__":
     unittest.main()
+

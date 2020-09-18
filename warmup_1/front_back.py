@@ -1,3 +1,9 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
 """
 Given a string, return a new string where the first and last chars have been exchanged.
 
@@ -46,3 +52,5 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

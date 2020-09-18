@@ -1,3 +1,10 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
+
 """
 Given three ints, a b c, return True if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more. Note: abs(num) computes the absolute value of a number.
 
@@ -27,3 +34,5 @@ class MyTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

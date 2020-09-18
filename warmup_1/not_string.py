@@ -1,3 +1,10 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
+
 """
 Given a string, return a new string where "not " has been added to the front. However, if the string already begins with "not", return the string unchanged.
 
@@ -39,3 +46,4 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

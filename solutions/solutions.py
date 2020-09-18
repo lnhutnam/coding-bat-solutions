@@ -1,8 +1,17 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
 
 # list 1
+# =======================================================================================================================================
 
 
 # list 2
+# =======================================================================================================================================
+
 
 # logic 1
 # =======================================================================================================================================
@@ -158,8 +167,20 @@ squirrel_play(95, True) → True
 def squirrel_play(temp, is_summer):
     return (60 <= temp <= 90, 60 <= temp <= 100)[is_summer]
 
-# logic 2
 
+# logic 2
+# =======================================================================================================================================
+"""
+We want to make a row of bricks that is goal inches long. We have a number of small bricks (1 inch each) and big bricks (5 inches each). 
+Return True if it is possible to make the goal by choosing from the given bricks. 
+This is a little harder than it looks and can be done without any loops. See also: Introduction to MakeBricks
+"""
+
+
+def make_bricks(small, big, goal):
+    return ((False, True)[(goal - big * 5) <= small], (False, True)[(goal - (goal // 5) * 5) <= small])[goal // 5 <= big]
+
+# =======================================================================================================================================
 # string 1
 
 # string 2

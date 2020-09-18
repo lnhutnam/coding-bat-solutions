@@ -1,3 +1,9 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
 """
 We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each). Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.
 
@@ -27,3 +33,5 @@ class MyTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

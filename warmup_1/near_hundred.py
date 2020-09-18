@@ -1,3 +1,9 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
 """
 Given an int n, return True if it is within 10 of 100 or 200. Note: abs(num) computes the absolute value of a number.
 
@@ -74,3 +80,4 @@ class TestNearHundred(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

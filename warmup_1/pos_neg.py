@@ -1,3 +1,10 @@
+# =======================================================================================================================================
+# VNU-HCM, University of Science
+# Department Computer Science, Faculty of Information Technology
+# Authors: Nhut-Nam Le (Tich Phan Suy Rong)
+# © 2020
+
+
 """
 Given 2 int values, return True if one is negative and one is positive. Except if the parameter "negative" is True, then return True only if both are negative.
 
@@ -5,7 +12,6 @@ Given 2 int values, return True if one is negative and one is positive. Except i
 pos_neg(1, -1, False) → True
 pos_neg(-1, 1, False) → True
 pos_neg(-4, -5, True) → True
-
 pos_neg(-4, -5, False) → False
 pos_neg(-4, 5, False) → True
 pos_neg(-4, 5, True) → False
@@ -92,3 +98,5 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
