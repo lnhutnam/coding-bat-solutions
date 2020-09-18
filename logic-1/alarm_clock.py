@@ -8,13 +8,10 @@ alarm_clock(1, False) → '7:00'
 alarm_clock(5, False) → '7:00'
 alarm_clock(0, False) → '10:00'
 """
-
 import unittest
-
 
 def alarm_clock(day, vacation):
     return (('7:00', '10:00')[day == 0 or day == 6], ('10:00', 'off')[day == 0 or day == 6])[vacation]
-
 
 class MyTest(unittest.TestCase):
     def test_case_00(self):
@@ -47,3 +44,4 @@ class MyTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
