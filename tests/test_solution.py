@@ -22,6 +22,11 @@ from solutions.solutions import sorta_sum
 from solutions.solutions import squirrel_play
 # logic 2
 from solutions.solutions import make_bricks
+from solutions.solutions import lone_sum
+from solutions.solutions import lucky_sum
+from solutions.solutions import no_teen_sum
+from solutions.solutions import round_sum
+
 # string 1
 
 # string 2
@@ -538,6 +543,184 @@ class TestMakeBricks(unittest.TestCase):
     def test_case_30(self):
         # make_bricks(20, 4, 39) → True
         self.assertEqual(make_bricks(20, 4, 39), True)
+
+
+class TestLoneSum(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(lone_sum(1, 2, 3), 6)
+
+    def test_case_01(self):
+        self.assertEqual(lone_sum(3, 2, 3), 2)
+
+    def test_case_02(self):
+        self.assertEqual(lone_sum(3, 3, 3), 0)
+
+    def test_case_03(self):
+        self.assertEqual(lone_sum(9, 2, 2), 9)
+
+    def test_case_04(self):
+        self.assertEqual(lone_sum(2, 2, 9), 9)
+
+    def test_case_05(self):
+        self.assertEqual(lone_sum(2, 9, 2), 9)
+
+    def test_case_05(self):
+        self.assertEqual(lone_sum(2, 9, 3), 14)
+
+    def test_case_06(self):
+        self.assertEqual(lone_sum(4, 2, 3), 9)
+
+    def test_case_02(self):
+        self.assertEqual(lone_sum(1, 3, 1), 3)
+
+
+class TestLuckyNum(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(lucky_sum(1, 2, 3), 6)
+
+    def test_case_01(self):
+        self.assertEqual(lucky_sum(1, 2, 13), 3)
+
+    def test_case_02(self):
+        self.assertEqual(lucky_sum(1, 13, 3), 1)
+
+    def test_case_03(self):
+        self.assertEqual(lucky_sum(1, 13, 13), 1)
+
+    def test_case_04(self):
+        self.assertEqual(lucky_sum(6, 5, 2), 13)
+
+    def test_case_05(self):
+        self.assertEqual(lucky_sum(13, 2, 3), 0)
+
+    def test_case_06(self):
+        self.assertEqual(lucky_sum(13, 2, 13), 0)
+
+    def test_case_07(self):
+        self.assertEqual(lucky_sum(13, 13, 2), 0)
+
+    def test_case_08(self):
+        self.assertEqual(lucky_sum(9, 4, 13), 13)
+
+    def test_case_09(self):
+        self.assertEqual(lucky_sum(8, 13, 2), 8)
+
+    def test_case_10(self):
+        self.assertEqual(lucky_sum(7, 2, 1), 10)
+
+    def test_case_11(self):
+        self.assertEqual(lucky_sum(3, 3, 13), 6)
+
+
+class TestNoTeenSum(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(no_teen_sum(1, 2, 3), 6)
+
+    def test_case_01(self):
+        self.assertEqual(no_teen_sum(2, 13, 1), 3)
+
+    def test_case_02(self):
+        self.assertEqual(no_teen_sum(2, 1, 14), 3)
+
+    def test_case_03(self):
+        self.assertEqual(no_teen_sum(2, 1, 15), 18)
+
+    def test_case_04(self):
+        self.assertEqual(no_teen_sum(2, 1, 16), 19)
+
+    def test_case_05(self):
+        self.assertEqual(no_teen_sum(2, 1, 17), 3)
+
+    def test_case_06(self):
+        self.assertEqual(no_teen_sum(17, 1, 2), 3)
+
+    def test_case_07(self):
+        self.assertEqual(no_teen_sum(2, 15, 2), 19)
+
+    def test_case_08(self):
+        self.assertEqual(no_teen_sum(16, 17, 18), 16)
+
+    def test_case_09(self):
+        self.assertEqual(no_teen_sum(17, 18, 19), 0)
+
+    def test_case_10(self):
+        self.assertEqual(no_teen_sum(15, 16, 1), 32)
+
+    def test_case_11(self):
+        self.assertEqual(no_teen_sum(15, 15, 19), 30)
+
+    def test_case_12(self):
+        self.assertEqual(no_teen_sum(15, 19, 16), 31)
+
+    def test_case_13(self):
+        self.assertEqual(no_teen_sum(5, 17, 18), 5)
+
+    def test_case_14(self):
+        self.assertEqual(no_teen_sum(17, 18, 16), 16)
+
+    def test_case_15(self):
+        self.assertEqual(no_teen_sum(17, 19, 18), 0)
+
+
+class TestRoundSum(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(round_sum(16, 17, 18), 60)
+
+    def test_case_01(self):
+        self.assertEqual(round_sum(12, 13, 14), 30)
+
+    def test_case_02(self):
+        self.assertEqual(round_sum(6, 4, 4), 10)
+
+    def test_case_03(self):
+        self.assertEqual(round_sum(4, 6, 5), 20)
+
+    def test_case_04(self):
+        self.assertEqual(round_sum(4, 4, 6), 10)
+
+    def test_case_05(self):
+        self.assertEqual(round_sum(9, 4, 4), 10)
+
+    def test_case_06(self):
+        self.assertEqual(round_sum(0, 0, 1), 0)
+
+    def test_case_07(self):
+        self.assertEqual(round_sum(0, 9, 0), 10)
+
+    def test_case_08(self):
+        self.assertEqual(round_sum(10, 10, 19), 40)
+
+    def test_case_09(self):
+        self.assertEqual(round_sum(20, 30, 40), 90)
+
+    def test_case_10(self):
+        self.assertEqual(round_sum(45, 21, 30), 100)
+
+    def test_case_11(self):
+        self.assertEqual(round_sum(23, 11, 26), 60)
+
+    def test_case_12(self):
+        self.assertEqual(round_sum(23, 24, 25), 70)
+
+    def test_case_13(self):
+        self.assertEqual(round_sum(25, 24, 25), 80)
+
+    def test_case_14(self):
+        self.assertEqual(round_sum(23, 24, 29), 70)
+
+    def test_case_15(self):
+        self.assertEqual(round_sum(11, 24, 36), 70)
+
+    def test_case_16(self):
+        self.assertEqual(round_sum(24, 36, 32), 90)
+
+    def test_case_17(self):
+        self.assertEqual(round_sum(14, 12, 26), 50)
+
+    def test_case_18(self):
+        self.assertEqual(round_sum(12, 10, 24), 40)
+
+
 
 # string 1 tesing
 # =======================================================================================================================================
