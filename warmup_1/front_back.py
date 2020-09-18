@@ -9,15 +9,40 @@ front_back('ab') → 'ba'
 
 import unittest
 
-
 ##########################
 def front_back(str):
-  return str[len(str)] + str[1:] + str[0]
+  if (len(str) <= 1):
+    return str
+  else:
+    return str[len(str) - 1] + str[1: len(str) - 1] + str[0]
 
 
-############# TESTING CLASS ############# 
+############# TESTING CLASS #############
 class Test(unittest.TestCase):
-    pass
+    def test_case_00(self):
+        self.assertEqual(front_back('code'), 'eodc')
+
+    def test_case_01(self):
+        self.assertEqual(front_back('a'), 'a')
+
+    def test_case_02(self):
+        self.assertEqual(front_back('ab'), 'ba')
+
+    def test_case_03(self):
+        self.assertEqual(front_back('abc'), 'cba')
+
+    def test_case_04(self):
+        self.assertEqual(front_back(''), '')
+
+    def test_case_05(self):
+        self.assertEqual(front_back('Chocolate'), 'ehocolatC')
+
+    def test_case_06(self):
+        self.assertEqual(front_back('aavJ'), 'Java')
+
+    def test_case_07(self):
+        self.assertEqual(front_back('hello'), 'oellh')
+
 
 if __name__ == "__main__":
     unittest.main()

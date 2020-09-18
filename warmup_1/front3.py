@@ -12,10 +12,31 @@ import unittest
 
 
 def front3(str):
-    pass
+    return (str[:3] + str[:3] + str[:3], str[:len(str)] + str[:len(str)] + str[:len(str)])[len(str) < 3]
+
 
 class Test(unittest.TestCase):
-    pass
+    def test_case_00(self):
+        self.assertEqual(front3('Java'), 'JavJavJav')
+
+    def test_case_01(self):
+        self.assertEqual(front3('Chocolate'), 'ChoChoCho')
+
+    def test_case_02(self):
+        self.assertEqual(front3('abc'), 'abcabcabc')
+
+    def test_case_03(self):
+        self.assertEqual(front3('abcXYZ'), 'abcabcabc')
+
+    def test_case_04(self):
+        self.assertEqual(front3('ab'), 'ababab')
+
+    def test_case_05(self):
+        self.assertEqual(front3('a'), 'aaa')
+
+    def test_case_06(self):
+        self.assertEqual(front3(''), '')
+
 
 if __name__ == "__main__":
     unittest.main()
