@@ -23,6 +23,12 @@ from solutions.solutions import make_ends
 from solutions.solutions import has23
 
 # list 2
+from solutions.solutions import count_evens
+from solutions.solutions import big_diff
+from solutions.solutions import centered_average
+from solutions.solutions import sum13
+from solutions.solutions import sum67
+from solutions.solutions import has22
 
 # logic 1
 from solutions.solutions import alarm_clock
@@ -252,7 +258,6 @@ class TestMaxEnd3(unittest.TestCase):
         self.assertEqual(max_end3([0, 0, 1]), [1, 1, 1])
 
 
-
 class TestSum2(unittest.TestCase):
     def test_case_00(self):
         self.assertEqual(sum2([1, 2, 3]), 3)
@@ -356,8 +361,259 @@ class TestHas23(unittest.TestCase):
 # =======================================================================================================================================
 
 
+class TestCountEvems(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(count_evens([2, 1, 2, 3, 4]), 3)
+
+    def test_case_01(self):
+        self.assertEqual(count_evens([2, 2, 0]), 3)
+
+    def test_case_02(self):
+        self.assertEqual(count_evens([1, 3, 5]), 0)
+
+    def test_case_03(self):
+        self.assertEqual(count_evens([]), 0)
+
+    def test_case_04(self):
+        self.assertEqual(count_evens([11, 9, 0, 1]), 1)
+
+    def test_case_05(self):
+        self.assertEqual(count_evens([2, 11, 9, 0]), 2)
+
+    def test_case_06(self):
+        self.assertEqual(count_evens([2]), 1)
+
+    def test_case_07(self):
+        self.assertEqual(count_evens([2, 5, 12]), 2)
+
+
+class TestBigDiff(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(big_diff([10, 3, 5, 6]), 7)
+
+    def test_case_01(self):
+        self.assertEqual(big_diff([7, 2, 10, 9]), 8)
+
+    def test_case_02(self):
+        self.assertEqual(big_diff([2, 10, 7, 2]), 8)
+
+    def test_case_03(self):
+        self.assertEqual(big_diff([2, 10]), 8)
+
+    def test_case_04(self):
+        self.assertEqual(big_diff([10, 2]), 8)
+
+    def test_case_05(self):
+        self.assertEqual(big_diff([10, 0]), 10)
+
+    def test_case_06(self):
+        self.assertEqual(big_diff([2, 3]), 1)
+
+    def test_case_07(self):
+        self.assertEqual(big_diff([2, 2]), 0)
+
+    def test_case_08(self):
+        self.assertEqual(big_diff([2]), 0)
+
+    def test_case_09(self):
+        self.assertEqual(big_diff([5, 1, 6, 1, 9, 9]), 8)
+
+    def test_case_10(self):
+        self.assertEqual(big_diff([7, 6, 8, 5]), 3)
+
+    def test_case_11(self):
+        self.assertEqual(big_diff([7, 7, 6, 8, 5, 5, 6]), 3)
+
+
+class TestCenterdAverage(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(centered_average([1, 2, 3, 4, 100]), 3)
+
+    def test_case_01(self):
+        self.assertEqual(centered_average([1, 1, 5, 5, 10, 8, 7]), 5)
+
+    def test_case_02(self):
+        self.assertEqual(centered_average([-10, -4, -2, -4, -2, 0]), -3)
+
+    def test_case_03(self):
+        self.assertEqual(centered_average([5, 3, 4, 6, 2]), 4)
+
+    def test_case_04(self):
+        self.assertEqual(centered_average([5, 3, 4, 0, 100]), 4)
+
+    def test_case_05(self):
+        self.assertEqual(centered_average([100, 0, 5, 3, 4]), 4)
+
+    def test_case_06(self):
+        self.assertEqual(centered_average([4, 0, 100]), 4)
+
+    def test_case_07(self):
+        self.assertEqual(centered_average([0, 2, 3, 4, 100]), 3)
+
+    def test_case_08(self):
+        self.assertEqual(centered_average([1, 1, 100]), 1)
+
+    def test_case_09(self):
+        self.assertEqual(centered_average([7, 7, 7]), 7)
+
+    def test_case_10(self):
+        self.assertEqual(centered_average([1, 7, 8]), 7)
+
+    def test_case_11(self):
+        self.assertEqual(centered_average([1, 1, 99, 99]), 50)
+
+    def test_case_12(self):
+        self.assertEqual(centered_average([1000, 0, 1, 99]), 50)
+
+    def test_case_13(self):
+        self.assertEqual(centered_average([4, 4, 4, 4, 5]), 4)
+
+    def test_case_14(self):
+        self.assertEqual(centered_average([4, 4, 4, 1, 5]), 4)
+
+    def test_case_15(self):
+        self.assertEqual(centered_average([6, 4, 8, 12, 3]), 6)
+
+
+class TestSum13(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(sum13([1, 2, 2, 1]), 6)
+
+    def test_case_01(self):
+        self.assertEqual(sum13([1, 1]), 2)
+
+    def test_case_02(self):
+        self.assertEqual(sum13([1, 2, 2, 1, 13]), 6)
+
+    def test_case_03(self):
+        self.assertEqual(sum13([1, 2, 13, 2, 1, 13]), 4)
+
+    def test_case_04(self):
+        self.assertEqual(sum13([13, 1, 2, 13, 2, 1, 13]), 3)
+
+    def test_case_05(self):
+        self.assertEqual(sum13([]), 0)
+
+    def test_case_06(self):
+        self.assertEqual(sum13([13]), 0)
+
+    def test_case_07(self):
+        self.assertEqual(sum13([13, 13]), 0)
+
+    def test_case_08(self):
+        self.assertEqual(sum13([13, 0, 13]), 0)
+
+    def test_case_09(self):
+        self.assertEqual(sum13([13, 1, 13]), 0)
+
+    def test_case_10(self):
+        self.assertEqual(sum13([5, 7, 2]), 14)
+
+    def test_case_11(self):
+        self.assertEqual(sum13([5, 13, 2]), 5)
+
+    def test_case_12(self):
+        self.assertEqual(sum13([0]), 0)
+
+    def test_case_13(self):
+        self.assertEqual(sum13([13, 0]), 0)
+
+
+class TestSum67(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(sum67([1, 2, 2]), 5)
+
+    def test_case_01(self):
+        self.assertEqual(sum67([1, 2, 2, 6, 99, 99, 7]), 5)
+
+    def test_case_02(self):
+        self.assertEqual(sum67([1, 1, 6, 7, 2]), 4)
+
+    def test_case_03(self):
+        self.assertEqual(sum67([1, 6, 2, 2, 7, 1, 6, 99, 99, 7]), 2)
+
+    def test_case_04(self):
+        self.assertEqual(sum67([1, 6, 2, 6, 2, 7, 1, 6, 99, 99, 7]), 2)
+
+    def test_case_05(self):
+        self.assertEqual(sum67([2, 7, 6, 2, 6, 7, 2, 7]), 18)
+
+    def test_case_06(self):
+        self.assertEqual(sum67([2, 7, 6, 2, 6, 2, 7]), 9)
+
+    def test_case_07(self):
+        self.assertEqual(sum67([1, 6, 7, 7]), 8)
+
+    def test_case_06(self):
+        self.assertEqual(sum67([6, 7, 1, 6, 7, 7]), 8)
+
+    def test_case_07(self):
+        self.assertEqual(sum67([6, 8, 1, 6, 7]), 0)
+
+    def test_case_08(self):
+        self.assertEqual(sum67([]), 0)
+
+    def test_case_09(self):
+        self.assertEqual(sum67([6, 7, 11]), 11)
+
+    def test_case_10(self):
+        self.assertEqual(sum67([11, 6, 7, 11]), 22)
+
+    def test_case_11(self):
+        self.assertEqual(sum67([2, 2, 6, 7, 7]), 11)
+
+
+class TestHas22(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(has22([1, 2, 2]), True)
+
+    def test_case_01(self):
+        self.assertEqual(has22([1, 2, 1, 2]), False)
+
+    def test_case_02(self):
+        self.assertEqual(has22([2, 1, 2]), False)
+
+    def test_case_03(self):
+        self.assertEqual(has22([1, 2, 2]), True)
+
+    def test_case_04(self):
+        self.assertEqual(has22([2, 2, 1, 2]), True)
+
+    def test_case_05(self):
+        self.assertEqual(has22([1, 3, 2]), False)
+
+    def test_case_06(self):
+        self.assertEqual(has22([1, 3, 2, 2]), True)
+
+    def test_case_07(self):
+        self.assertEqual(has22([2, 3, 2, 2]), True)
+
+    def test_case_08(self):
+        self.assertEqual(has22([4, 2, 4, 2, 2, 5]), True)
+
+    def test_case_09(self):
+        self.assertEqual(has22([1, 2]), False)
+
+    def test_case_10(self):
+        self.assertEqual(has22([2, 2]), True)
+
+    def test_case_11(self):
+        self.assertEqual(has22([2]), False)
+
+    def test_case_12(self):
+        self.assertEqual(has22([]), False)
+
+    def test_case_13(self):
+        self.assertEqual(has22([3, 3, 2, 2]), True)
+
+    def test_case_14(self):
+        self.assertEqual(has22([5, 2, 5, 2]), False)
+
+
 # logic 1 testing
 # =======================================================================================================================================
+
+
 class TestAlarmClock(unittest.TestCase):
     def test_case_00(self):
         self.assertEqual(alarm_clock(1, False), '7:00')
