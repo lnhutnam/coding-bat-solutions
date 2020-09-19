@@ -9,7 +9,13 @@ import unittest
 
 # ====================================================== IMPORT SECTION =================================================================
 # list 1
+from solutions.solutions import first_last6
+from solutions.solutions import same_first_last
+from solutions.solutions import make_pi
+from solutions.solutions import common_end
+
 # list 2
+
 # logic 1
 from solutions.solutions import alarm_clock
 from solutions.solutions import caught_speeding
@@ -31,6 +37,8 @@ from solutions.solutions import close_far
 from solutions.solutions import make_chocolate
 
 # string 1
+from solutions.solutions import hello_name
+
 
 # string 2
 
@@ -49,15 +57,92 @@ from solutions.solutions import sleep_in
 from solutions.solutions import sum_double
 
 # warmup 2
+from solutions.solutions import string_times
+from solutions.solutions import front_times
+from solutions.solutions import string_bits
 
 # =======================================================================================================================================
+
 
 # list 1 testing
 # =======================================================================================================================================
+class TestFirstLast6(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(first_last6([1, 2, 6]), True)
+
+    def test_case_01(self):
+        self.assertEqual(first_last6([6, 1, 2, 3]), True)
+
+    def test_case_02(self):
+        self.assertEqual(first_last6([13, 6, 1, 2, 3]), False)
+
+    def test_case_03(self):
+        self.assertEqual(first_last6([3, 2, 1]), False)
+
+    def test_case_04(self):
+        self.assertEqual(first_last6([3, 6, 1]), False)
+
+    def test_case_05(self):
+        self.assertEqual(first_last6([3, 6]), True)
+
+    def test_case_06(self):
+        self.assertEqual(first_last6([6]), True)
+
+    def test_case_07(self):
+        self.assertEqual(first_last6([3]), False)
+
+    def test_case_08(self):
+        self.assertEqual(first_last6([5, 6]), True)
+
+    def test_case_09(self):
+        self.assertEqual(first_last6([5, 5]), False)
+
+    def test_case_10(self):
+        self.assertEqual(first_last6([1, 2, 3, 4, 6]), True)
+
+    def test_case_11(self):
+        self.assertEqual(first_last6([1, 2, 3, 4]), False)
 
 
+class TestSameFirstLast(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(same_first_last([1, 2, 3]), False)
+
+    def test_case_01(self):
+        self.assertEqual(same_first_last([1, 2, 3, 1]), True)
+
+    def test_case_02(self):
+        self.assertEqual(same_first_last([1, 2, 1]), True)
+
+    def test_case_03(self):
+        self.assertEqual(same_first_last([7]), True)
+
+    def test_case_04(self):
+        self.assertEqual(same_first_last([]), False)
+
+    def test_case_05(self):
+        self.assertEqual(same_first_last([1, 2, 3, 4, 5, 1]), True)
+
+    def test_case_06(self):
+        self.assertEqual(same_first_last([1, 2, 3, 4, 5, 13]), False)
+
+    def test_case_07(self):
+        self.assertEqual(same_first_last([13, 2, 3, 4, 5, 13]), True)
+
+    def test_case_08(self):
+        self.assertEqual(same_first_last([7, 7]), True)
+
+
+class TestMakePi(unittest.TestCase):
+    def test_case(self):
+        self.assertEqual(make_pi(), [3, 1, 4])
+
+
+
+    
 # list 2 testing
 # =======================================================================================================================================
+
 
 # logic 1 testing
 # =======================================================================================================================================
@@ -840,6 +925,38 @@ class TestMakeChocolate(unittest.TestCase):
 # =======================================================================================================================================
 
 
+class TestHelloName(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(hello_name('Bob'), 'Hello Bob!')
+
+    def test_case_01(self):
+        self.assertEqual(hello_name('Alice'), 'Hello Alice!')
+
+    def test_case_02(self):
+        self.assertEqual(hello_name('X'), 'Hello X!')
+
+    def test_case_03(self):
+        self.assertEqual(hello_name('Dolly'), 'Hello Dolly!')
+
+    def test_case_04(self):
+        self.assertEqual(hello_name('Alpha'), 'Hello Alpha!')
+
+    def test_case_05(self):
+        self.assertEqual(hello_name('Omega'), 'Hello Omega!')
+
+    def test_case_06(self):
+        self.assertEqual(hello_name('Goodbye'), 'Hello Goodbye!')
+
+    def test_case_07(self):
+        self.assertEqual(hello_name('ho ho ho'), 'Hello ho ho ho!')
+
+    def test_case_08(self):
+        self.assertEqual(hello_name('xyz!'), 'Hello xyz!!')
+
+    def test_case_09(self):
+        self.assertEqual(hello_name('Hello'), 'Hello Hello!')
+
+
 # string 2 tesing
 # =======================================================================================================================================
 
@@ -1216,3 +1333,90 @@ class TestSumDboule(unittest.TestCase):
 
 # warmup 2 tesing
 # =======================================================================================================================================
+
+
+class TestStringTimes(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(string_times('Hi', 2), 'HiHi')
+
+    def test_case_01(self):
+        self.assertEqual(string_times('Hi', 3), 'HiHiHi')
+
+    def test_case_02(self):
+        self.assertEqual(string_times('Hi', 1), 'Hi')
+
+    def test_case_03(self):
+        self.assertEqual(string_times('Hi', 0), '')
+
+    def test_case_04(self):
+        self.assertEqual(string_times('Hi', 5), 'HiHiHiHiHi')
+
+    def test_case_05(self):
+        self.assertEqual(string_times('Oh Boy!', 2), 'Oh Boy!Oh Boy!')
+
+    def test_case_06(self):
+        self.assertEqual(string_times('x', 4), 'xxxx')
+
+    def test_case_07(self):
+        self.assertEqual(string_times('', 4), '')
+
+    def test_case_08(self):
+        self.assertEqual(string_times('code', 2), 'codecode')
+
+    def test_case_09(self):
+        self.assertEqual(string_times('code', 3), 'codecodecode')
+
+
+class TestFrontTimes(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(front_times('Chocolate', 2), 'ChoCho')
+
+    def test_case_01(self):
+        self.assertEqual(front_times('Chocolate', 3), 'ChoChoCho')
+
+    def test_case_02(self):
+        self.assertEqual(front_times('Abc', 3), 'AbcAbcAbc')
+
+    def test_case_03(self):
+        self.assertEqual(front_times('Ab', 4), 'AbAbAbAb')
+
+    def test_case_04(self):
+        self.assertEqual(front_times('A', 4), 'AAAA')
+
+    def test_case_05(self):
+        self.assertEqual(front_times('', 4), '')
+
+    def test_case_02(self):
+        self.assertEqual(front_times('Abc', 0), '')
+
+
+class TestStringBits(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(string_bits('Hello'), 'Hlo')
+
+    def test_case_01(self):
+        self.assertEqual(string_bits('Hi'), 'H')
+
+    def test_case_02(self):
+        self.assertEqual(string_bits('Heeololeo'), 'Hello')
+
+    def test_case_03(self):
+        self.assertEqual(string_bits('HiHiHi'), 'HHH')
+
+    def test_case_04(self):
+        self.assertEqual(string_bits(''), '')
+
+    def test_case_05(self):
+        self.assertEqual(string_bits('Greetings'), 'Getns')
+
+    def test_case_06(self):
+        self.assertEqual(string_bits('Chocoate'), 'Coot')
+
+    def test_case_07(self):
+        self.assertEqual(string_bits('pi'), 'p')
+
+    def test_case_08(self):
+        self.assertEqual(string_bits('Hello Kitten'), 'HloKte')
+
+    def test_case_09(self):
+        self.assertEqual(string_bits('hxaxpxpxy'), 'happy')

@@ -7,8 +7,65 @@
 
 # list 1
 # =======================================================================================================================================
+"""
+Given an array of ints, return True if 6 appears as either the first or last element in the array. The array will be length 1 or more.
 
 
+first_last6([1, 2, 6]) → True
+first_last6([6, 1, 2, 3]) → True
+first_last6([13, 6, 1, 2, 3]) → False
+"""
+
+
+def first_last6(nums):
+    return (False, True)[nums[0] == 6 or nums[len(nums) - 1] == 6]
+
+
+# =======================================================================================================================================
+"""
+Given an array of ints, return True if the array is length 1 or more, and the first element and the last element are equal.
+
+
+same_first_last([1, 2, 3]) → False
+same_first_last([1, 2, 3, 1]) → True
+same_first_last([1, 2, 1]) → True
+"""
+
+
+def same_first_last(nums):
+    if (len(nums) == 0):
+        return False
+    return (((False, True)[nums[0] == nums[len(nums) - 1]], True)[len(nums) == 1], False)[len(nums) == 0]
+
+
+# =======================================================================================================================================
+"""
+Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+
+
+make_pi() → [3, 1, 4]
+"""
+
+
+def make_pi():
+    return [3, 1, 4]
+
+# =======================================================================================================================================
+"""
+Given 2 arrays of ints, a and b, return True if they have the same first element or they have the same last element. Both arrays will be length 1 or more.
+
+
+common_end([1, 2, 3], [7, 3]) → True
+common_end([1, 2, 3], [7, 3, 2]) → False
+common_end([1, 2, 3], [1, 3]) → True
+"""
+
+
+def common_end(a, b):
+    return (False, True)[a[0] == b[0] or a[len(a) - 1] == b[len(b) - 1]]
+
+
+    
 # list 2
 # =======================================================================================================================================
 
@@ -302,11 +359,30 @@ make_chocolate(4, 1, 7) → 2
 
 def make_chocolate(small, big, goal):
     return ((-1, goal - big * 5)[(goal - big * 5) <= small], (-1, (goal - (goal // 5) * 5))[(goal - (goal // 5) * 5) <= small])[goal // 5 <= big]
+
+
 # =======================================================================================================================================
 # string 1
+"""
+Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
+
+For example test case:
+hello_name('Bob') → 'Hello Bob!'
+hello_name('Alice') → 'Hello Alice!'
+hello_name('X') → 'Hello X!'
+"""
+
+
+def hello_name(name):
+    return "Hello " + name + "!"
+
+
+# =======================================================================================================================================
+
+
+# =======================================================================================================================================
 
 # string 2
-
 
 # warmup 1
 # =======================================================================================================================================
@@ -503,3 +579,51 @@ def sum_double(a, b):
 
 # warmup 2
 # =======================================================================================================================================
+"""
+Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+
+string_times('Hi', 2) → 'HiHi'
+string_times('Hi', 3) → 'HiHiHi'
+string_times('Hi', 1) → 'Hi'
+"""
+
+
+def string_times(str, n):
+    return str * n
+
+
+# =======================================================================================================================================
+"""
+Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. 
+Return n copies of the front;
+
+
+front_times('Chocolate', 2) → 'ChoCho'
+front_times('Chocolate', 3) → 'ChoChoCho'
+front_times('Abc', 3) → 'AbcAbcAbc'
+"""
+
+
+def front_times(str, n):
+    return (str[:len(str)] * n, str[:3] * n)[len(str) > 3]
+
+
+# =======================================================================================================================================
+"""
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+
+string_bits('Hello') → 'Hlo'
+string_bits('Hi') → 'H'
+string_bits('Heeololeo') → 'Hello'
+"""
+
+
+def string_bits(str):
+    result = ""
+    i = 0
+    while i < len(str):
+        result += str[i]
+        i += 2
+    return result
