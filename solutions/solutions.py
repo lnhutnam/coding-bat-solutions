@@ -616,8 +616,11 @@ hello_name('X') → 'Hello X!'
 """
 
 # =======================================================================================================================================
+
+
 def hello_name(name):
     return "Hello " + name + "!"
+
 
 """
 Given two strings, a and b, return the result of putting them together in the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
@@ -628,8 +631,10 @@ make_abba('Yo', 'Alice') → 'YoAliceAliceYo'
 make_abba('What', 'Up') → 'WhatUpUpWhat'
 """
 
+
 def make_abba(a, b):
-  return a + b + b + a
+    return a + b + b + a
+
 
 # =======================================================================================================================================
 """
@@ -645,6 +650,7 @@ make_tags('cite', 'Yay') → '<cite>Yay</cite>'
 def make_tags(tag, word):
     return '<' + tag + '>' + word + '</' + tag + '>'
 
+
 # =======================================================================================================================================
 """
 Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in the middle of the out string, e.g. "<<word>>".
@@ -656,8 +662,11 @@ make_out_word('[[]]', 'word') → '[[word]]'
 """
 
 # =======================================================================================================================================
+
+
 def make_out_word(out, word):
     return out[:2] + word + out[len(out) - 2:]
+
 
 """
 Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string length will be at least 2.
@@ -671,6 +680,7 @@ extra_end('Hi') → 'HiHiHi'
 
 def extra_end(str):
     return str[len(str) - 2:] * 3
+
 
 # =======================================================================================================================================
 """
@@ -686,6 +696,7 @@ first_two('ab') → 'ab'
 def first_two(str):
     return ((str[:2], str)[len(str) <= 2], '')[len(str) == 0]
 
+
 # =======================================================================================================================================
 """
 Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
@@ -699,6 +710,7 @@ first_half('abcdef') → 'abc'
 
 def first_half(str):
     return str[:(len(str) // 2)]
+
 
 # =======================================================================================================================================
 """
@@ -729,6 +741,7 @@ combo_string('aaa', 'b') → 'baaab'
 def combo_string(a, b):
     return (a + b + a, b + a + b)[len(a) > len(b)]
 
+
 # =======================================================================================================================================
 """
 Given 2 strings, return their concatenation, except omit the first char of each. The strings will be at least length 1.
@@ -743,6 +756,7 @@ non_start('shotl', 'java') → 'hotlava'
 def non_start(a, b):
     return a[1:] + b[1:]
 
+
 # =======================================================================================================================================
 """
 Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. The string length will be at least 2.
@@ -756,10 +770,137 @@ left2('Hi') → 'Hi'
 
 def left2(str):
     return str[2:] + str[:2]
+
+
 # string 2
+# =======================================================================================================================================
+"""
+Given a string, return a string where for every char in the original, there are two chars.
+
+
+double_char('The') → 'TThhee'
+double_char('AAbb') → 'AAAAbbbb'
+double_char('Hi-There') → 'HHii--TThheerree'
+"""
+
+
+def double_char(str):
+    result = ''
+    for c in str:
+        result += c * 2
+    return result
+
+
+"""
+Return the number of times that the string "hi" appears anywhere in the given string.
+
+
+count_hi('abc hi ho') → 1
+count_hi('ABChi hi') → 2
+count_hi('hihi') → 2
+"""
+
 # =======================================================================================================================================
 
 
+def count_hi(str):
+    count = 0
+    i = 0
+    while i < len(str) - 1:
+        if str[i:i + 2] == 'hi':
+            count += 1
+            i += 1
+        i += 1
+    return count
+
+
+# =======================================================================================================================================
+"""
+Return True if the string "cat" and "dog" appear the same number of times in the given string.
+
+
+cat_dog('catdog') → True
+cat_dog('catcat') → False
+cat_dog('1cat1cadodog') → True
+"""
+
+
+def cat_dog(str):
+    count = 0
+    i = 0
+    while i < len(str) - 2:
+        if str[i] == 'c':
+            if str[i:i + 3] == 'cat':
+                count += 1
+        elif str[i] == 'd':
+            if str[i:i + 3] == 'dog':
+                count -= 1
+        i += 1
+    return count == 0
+
+
+# =======================================================================================================================================
+"""
+Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+
+
+count_code('aaacodebbb') → 1
+count_code('codexxcode') → 2
+count_code('cozexxcope') → 2
+"""
+
+
+def count_code(str):
+    count = 0
+    i = 0
+    while i < len(str) - 3:
+        if str[i: i + 4][0] == 'c' and str[i: i + 4][1] == 'o' and str[i: i + 4][3] == 'e':
+            count += 1
+            i += 4
+        else:
+            i += 1
+    return count
+
+
+# =======================================================================================================================================
+"""
+Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+
+
+xyz_there('abcxyz') → True
+xyz_there('abc.xyz') → False
+xyz_there('xyz.abc') → True
+"""
+
+
+def xyz_there(str):
+    i = 0
+    while i < len(str) - 2:
+        if str[i: i + 3] == 'xyz':
+            if i == 0 or str[i - 1] != '.':
+                return True
+        i = i + 1
+    return False
+
+
+# =======================================================================================================================================
+"""
+Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: s.lower() returns the lowercase version of a string.
+
+
+end_other('Hiabc', 'abc') → True
+end_other('AbC', 'HiaBc') → True
+end_other('abc', 'abXabc') → True
+"""
+
+
+def end_other(a, b):
+    a = a.lower()
+    b = b.lower()
+    return (b[(len(b) - len(a)):] == a, a[(len(a) - len(b)):] == b)[len(a) >= len(b)]
+
+
+# =======================================================================================================================================
 # warmup 1
 # =======================================================================================================================================
 """

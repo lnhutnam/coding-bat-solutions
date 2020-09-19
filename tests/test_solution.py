@@ -64,7 +64,12 @@ from solutions.solutions import non_start
 from solutions.solutions import left2
 
 # string 2
-
+from solutions.solutions import double_char
+from solutions.solutions import count_hi
+from solutions.solutions import cat_dog
+from solutions.solutions import count_code
+from solutions.solutions import end_other
+from solutions.solutions import xyz_there
 # warmup 1
 from solutions.solutions import diff21
 from solutions.solutions import front_back
@@ -1695,8 +1700,240 @@ class TestLeft2(unittest.TestCase):
 # =======================================================================================================================================
 
 
+class TestDoubleChar(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(double_char('The'), 'TThhee')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('AAbb'), 'AAAAbbbb')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('Hi-There'), 'HHii--TThheerree')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('Word!'), 'WWoorrdd!!')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('!!'), '!!!!')
+
+    def test_case_00(self):
+        self.assertEqual(double_char(''), '')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('a'), 'aa')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('.'), '..')
+
+    def test_case_00(self):
+        self.assertEqual(double_char('aa'), 'aaaa')
+
+
+class TestCountHi(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(count_hi('abc hi ho'), 1)
+
+    def test_case_01(self):
+        self.assertEqual(count_hi('ABChi hi'), 2)
+
+    def test_case_02(self):
+        self.assertEqual(count_hi('hihi'), 2)
+
+    def test_case_03(self):
+        self.assertEqual(count_hi('hiHIhi'), 2)
+
+    def test_case_04(self):
+        self.assertEqual(count_hi(''), 0)
+
+    def test_case_05(self):
+        self.assertEqual(count_hi('h'), 0)
+
+    def test_case_06(self):
+        self.assertEqual(count_hi('hi'), 1)
+
+    def test_case_07(self):
+        self.assertEqual(count_hi('Hi is no HI on ahI'), 0)
+
+    def test_case_08(self):
+        self.assertEqual(count_hi('hiho not HOHIhi'), 2)
+
+
+class TestCatDog(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(cat_dog('catdog'), True)
+
+    def test_case_01(self):
+        self.assertEqual(cat_dog('catcat'), False)
+
+    def test_case_02(self):
+        self.assertEqual(cat_dog('1cat1cadodog'), True)
+
+    def test_case_03(self):
+        self.assertEqual(cat_dog('catxxdogxxxdog'), False)
+
+    def test_case_04(self):
+        self.assertEqual(cat_dog('catxdogxdogxcat'), True)
+
+    def test_case_05(self):
+        self.assertEqual(cat_dog('catxdogxdogxca'), False)
+
+    def test_case_06(self):
+        self.assertEqual(cat_dog('dogdogcat'), False)
+
+    def test_case_07(self):
+        self.assertEqual(cat_dog('dogogcat'), True)
+
+    def test_case_08(self):
+        self.assertEqual(cat_dog('dog'), False)
+
+    def test_case_09(self):
+        self.assertEqual(cat_dog('cat'), False)
+
+    def test_case_10(self):
+        self.assertEqual(cat_dog('ca'), True)
+
+    def test_case_11(self):
+        self.assertEqual(cat_dog('c'), True)
+
+    def test_case_12(self):
+        self.assertEqual(cat_dog(''), True)
+
+
+class TestCountCode(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(count_code('aaacodebbb'), 1)
+
+    def test_case_01(self):
+        self.assertEqual(count_code('codexxcode'), 2)
+
+    def test_case_02(self):
+        self.assertEqual(count_code('cozexxcope'), 2)
+
+    def test_case_03(self):
+        self.assertEqual(count_code('cozfxxcope'), 1)
+
+    def test_case_04(self):
+        self.assertEqual(count_code('xxcozeyycop'), 1)
+
+    def test_case_05(self):
+        self.assertEqual(count_code('cozcop'), 0)
+
+    def test_case_06(self):
+        self.assertEqual(count_code('abcxyz'), 0)
+
+    def test_case_07(self):
+        self.assertEqual(count_code('code'), 1)
+
+    def test_case_08(self):
+        self.assertEqual(count_code('ode'), 0)
+
+    def test_case_09(self):
+        self.assertEqual(count_code('c'), 0)
+
+    def test_case_10(self):
+        self.assertEqual(count_code(''), 0)
+
+    def test_case_11(self):
+        self.assertEqual(count_code('AAcodeBBcoleCCccoreDD'), 3)
+
+    def test_case_12(self):
+        self.assertEqual(count_code('AAcodeBBcoleCCccorfDD'), 2)
+
+    def test_case_13(self):
+        self.assertEqual(count_code('coAcodeBcoleccoreDD'), 3)
+
+
+class TestEndOther(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(end_other('Hiabc', 'abc'), True)
+
+    def test_case_01(self):
+        self.assertEqual(end_other('AbC', 'HiaBc'), True)
+
+    def test_case_02(self):
+        self.assertEqual(end_other('abc', 'abXabc'), True)
+
+    def test_case_03(self):
+        self.assertEqual(end_other('Hiabc', 'abcd'), False)
+
+    def test_case_04(self):
+        self.assertEqual(end_other('Hiabc', 'bc'), True)
+
+    def test_case_05(self):
+        self.assertEqual(end_other('Hiabcx', 'bc'), False)
+
+    def test_case_06(self):
+        self.assertEqual(end_other('abc', 'abc'), True)
+
+    def test_case_07(self):
+        self.assertEqual(end_other('xyz', '12xyz'), True)
+
+    def test_case_08(self):
+        self.assertEqual(end_other('yz', '12xz'), False)
+
+    def test_case_09(self):
+        self.assertEqual(end_other('Z', '12xz'), True)
+
+    def test_case_10(self):
+        self.assertEqual(end_other('12', '12'), True)
+
+    def test_case_11(self):
+        self.assertEqual(end_other('abcXYZ', 'abcDEF'), False)
+
+    def test_case_12(self):
+        self.assertEqual(end_other('ab', 'ab12'), False)
+
+    def test_case_13(self):
+        self.assertEqual(end_other('ab', '12ab'), True)
+
+
+class TestXyzThere(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(xyz_there('abcxyz'), True)
+
+    def test_case_01(self):
+        self.assertEqual(xyz_there('abc.xyz'), False)
+
+    def test_case_02(self):
+        self.assertEqual(xyz_there('xyz.abc'), True)
+
+    def test_case_03(self):
+        self.assertEqual(xyz_there('abcxy'), False)
+
+    def test_case_04(self):
+        self.assertEqual(xyz_there('xyz'), True)
+
+    def test_case_05(self):
+        self.assertEqual(xyz_there('xy'), False)
+
+    def test_case_06(self):
+        self.assertEqual(xyz_there('x'), False)
+
+    def test_case_07(self):
+        self.assertEqual(xyz_there(''), False)
+
+    def test_case_08(self):
+        self.assertEqual(xyz_there('abc.xyzxyz'), True)
+
+    def test_case_09(self):
+        self.assertEqual(xyz_there('abc.xxyz'), True)
+
+    def test_case_10(self):
+        self.assertEqual(xyz_there('.xyz'), False)
+
+    def test_case_11(self):
+        self.assertEqual(xyz_there('12.xyz'), False)
+
+    def test_case_12(self):
+        self.assertEqual(xyz_there('12xyz'), True)
+
+    def test_case_13(self):
+        self.assertEqual(xyz_there('1.xyz.xyz2.xyz'), False)
+
 # warmup 1 tesing
 # =======================================================================================================================================
+
+
 class TestDiff21(unittest.TestCase):
     def test_case_00(self):
         self.assertEqual(diff21(19), 2)
