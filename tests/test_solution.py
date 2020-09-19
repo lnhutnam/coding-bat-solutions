@@ -13,6 +13,14 @@ from solutions.solutions import first_last6
 from solutions.solutions import same_first_last
 from solutions.solutions import make_pi
 from solutions.solutions import common_end
+from solutions.solutions import sum3
+from solutions.solutions import rotate_left3
+from solutions.solutions import reverse3
+from solutions.solutions import max_end3
+from solutions.solutions import sum2
+from solutions.solutions import middle_way
+from solutions.solutions import make_ends
+from solutions.solutions import has23
 
 # list 2
 
@@ -138,8 +146,212 @@ class TestMakePi(unittest.TestCase):
         self.assertEqual(make_pi(), [3, 1, 4])
 
 
+class TestCommonEnd(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(common_end([1, 2, 3], [7, 3]), True)
 
-    
+    def test_case_01(self):
+        self.assertEqual(common_end([1, 2, 3], [7, 3, 2]), False)
+
+    def test_case_02(self):
+        self.assertEqual(common_end([1, 2, 3], [1, 3]), True)
+
+    def test_case_03(self):
+        self.assertEqual(common_end([1, 2, 3], [1]), True)
+
+    def test_case_04(self):
+        self.assertEqual(common_end([1, 2, 3], [2]), False)
+
+
+class TestSum3(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(sum3([1, 2, 3]), 6)
+
+    def test_case_01(self):
+        self.assertEqual(sum3([5, 11, 2]), 18)
+
+    def test_case_02(self):
+        self.assertEqual(sum3([7, 0, 0]), 7)
+
+    def test_case_03(self):
+        self.assertEqual(sum3([1, 2, 1]), 4)
+
+    def test_case_04(self):
+        self.assertEqual(sum3([1, 1, 1]), 3)
+
+    def test_case_05(self):
+        self.assertEqual(sum3([2, 7, 2]), 11)
+
+
+class TestRotateLeft3(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(rotate_left3([1, 2, 3]), [2, 3, 1])
+
+    def test_case_01(self):
+        self.assertEqual(rotate_left3([5, 11, 9]), [11, 9, 5])
+
+    def test_case_02(self):
+        self.assertEqual(rotate_left3([7, 0, 0]), [0, 0, 7])
+
+    def test_case_03(self):
+        self.assertEqual(rotate_left3([1, 2, 1]), [2, 1, 1])
+
+    def test_case_04(self):
+        self.assertEqual(rotate_left3([0, 0, 1]), [0, 1, 0])
+
+
+class TestReverse3(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(reverse3([1, 2, 3]), [3, 2, 1])
+
+    def test_case_01(self):
+        self.assertEqual(reverse3([5, 11, 9]), [9, 11, 5])
+
+    def test_case_02(self):
+        self.assertEqual(reverse3([7, 0, 0]), [0, 0, 7])
+
+    def test_case_03(self):
+        self.assertEqual(reverse3([2, 1, 2]), [2, 1, 2])
+
+    def test_case_04(self):
+        self.assertEqual(reverse3([1, 2, 1]), [1, 2, 1])
+
+    def test_case_05(self):
+        self.assertEqual(reverse3([2, 11, 3]), [3, 11, 2])
+
+    def test_case_06(self):
+        self.assertEqual(reverse3([0, 6, 5]), [5, 6, 0])
+
+    def test_case_07(self):
+        self.assertEqual(reverse3([7, 2, 3]), [3, 2, 7])
+
+
+class TestMaxEnd3(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(max_end3([1, 2, 3]), [3, 3, 3])
+
+    def test_case_01(self):
+        self.assertEqual(max_end3([11, 5, 9]), [11, 11, 11])
+
+    def test_case_02(self):
+        self.assertEqual(max_end3([2, 11, 3]), [3, 3, 3])
+
+    def test_case_03(self):
+        self.assertEqual(max_end3([11, 3, 3]), [11, 11, 11])
+
+    def test_case_04(self):
+        self.assertEqual(max_end3([3, 11, 11]), [11, 11, 11])
+
+    def test_case_05(self):
+        self.assertEqual(max_end3([2, 2, 2]), [2, 2, 2])
+
+    def test_case_06(self):
+        self.assertEqual(max_end3([2, 11, 2]), [2, 2, 2])
+
+    def test_case_07(self):
+        self.assertEqual(max_end3([0, 0, 1]), [1, 1, 1])
+
+
+
+class TestSum2(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(sum2([1, 2, 3]), 3)
+
+    def test_case_01(self):
+        self.assertEqual(sum2([1, 1]), 2)
+
+    def test_case_02(self):
+        self.assertEqual(sum2([1, 1, 1, 1]), 2)
+
+    def test_case_03(self):
+        self.assertEqual(sum2([1, 2]), 3)
+
+    def test_case_04(self):
+        self.assertEqual(sum2([1]), 1)
+
+    def test_case_05(self):
+        self.assertEqual(sum2([]), 0)
+
+    def test_case_06(self):
+        self.assertEqual(sum2([4, 5, 6]), 9)
+
+    def test_case_07(self):
+        self.assertEqual(sum2([4]), 4)
+
+
+class TestMiddleWay(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(middle_way([1, 2, 3], [4, 5, 6]), [2, 5])
+
+    def test_case_01(self):
+        self.assertEqual(middle_way([7, 7, 7], [3, 8, 0]), [7, 8])
+
+    def test_case_02(self):
+        self.assertEqual(middle_way([5, 2, 9], [1, 4, 5]), [2, 4])
+
+    def test_case_03(self):
+        self.assertEqual(middle_way([1, 9, 7], [4, 8, 8]), [9, 8])
+
+    def test_case_04(self):
+        self.assertEqual(middle_way([1, 2, 3], [3, 1, 4]), [2, 1])
+
+    def test_case_05(self):
+        self.assertEqual(middle_way([1, 2, 3], [4, 1, 1]), [2, 1])
+
+
+class TestMakeEnds(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(make_ends([1, 2, 3]), [1, 3])
+
+    def test_case_01(self):
+        self.assertEqual(make_ends([1, 2, 3, 4]), [1, 4])
+
+    def test_case_02(self):
+        self.assertEqual(make_ends([7, 4, 6, 2]), [7, 2])
+
+    def test_case_03(self):
+        self.assertEqual(make_ends([1, 2, 2, 2, 2, 2, 2, 3]), [1, 3])
+
+    def test_case_04(self):
+        self.assertEqual(make_ends([7, 4]), [7, 4])
+
+    def test_case_05(self):
+        self.assertEqual(make_ends([7]), [7, 7])
+
+    def test_case_06(self):
+        self.assertEqual(make_ends([5, 2, 9]), [5, 9])
+
+    def test_case_07(self):
+        self.assertEqual(make_ends([2, 3, 4, 1]), [2, 1])
+
+
+class TestHas23(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(has23([2, 5]), True)
+
+    def test_case_01(self):
+        self.assertEqual(has23([4, 3]), True)
+
+    def test_case_02(self):
+        self.assertEqual(has23([4, 5]), False)
+
+    def test_case_03(self):
+        self.assertEqual(has23([2, 2]), True)
+
+    def test_case_04(self):
+        self.assertEqual(has23([3, 2]), True)
+
+    def test_case_05(self):
+        self.assertEqual(has23([3, 3]), True)
+
+    def test_case_06(self):
+        self.assertEqual(has23([7, 7]), False)
+
+    def test_case_07(self):
+        self.assertEqual(has23([3, 9]), True)
+
+    def test_case_08(self):
+        self.assertEqual(has23([9, 5]), False)
 # list 2 testing
 # =======================================================================================================================================
 
