@@ -74,6 +74,12 @@ from solutions.solutions import sum_double
 from solutions.solutions import string_times
 from solutions.solutions import front_times
 from solutions.solutions import string_bits
+from solutions.solutions import string_splosion
+from solutions.solutions import last2
+from solutions.solutions import array_count9
+from solutions.solutions import array_front9
+from solutions.solutions import array123
+from solutions.solutions import string_match
 
 # =======================================================================================================================================
 
@@ -1888,3 +1894,201 @@ class TestStringBits(unittest.TestCase):
 
     def test_case_09(self):
         self.assertEqual(string_bits('hxaxpxpxy'), 'happy')
+
+
+class TestStringSplosion(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(string_splosion('Code'), 'CCoCodCode')
+
+    def test_case_01(self):
+        self.assertEqual(string_splosion('abc'), 'aababc')
+
+    def test_case_02(self):
+        self.assertEqual(string_splosion('ab'), 'aab')
+
+    def test_case_03(self):
+        self.assertEqual(string_splosion('x'), 'x')
+
+    def test_case_04(self):
+        self.assertEqual(string_splosion('fade'), 'ffafadfade')
+
+    def test_case_05(self):
+        self.assertEqual(string_splosion('There'), 'TThTheTherThere')
+
+    def test_case_06(self):
+        self.assertEqual(string_splosion('Kitten'), 'KKiKitKittKitteKitten')
+
+    def test_case_07(self):
+        self.assertEqual(string_splosion('Bye'), 'BByBye')
+
+    def test_case_08(self):
+        self.assertEqual(string_splosion('Good'), 'GGoGooGood')
+
+    def test_case_09(self):
+        self.assertEqual(string_splosion('Bad'), 'BBaBad')
+
+
+class TestLast2(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(last2('hixxhi'), 1)
+
+    def test_case_01(self):
+        self.assertEqual(last2('xaxxaxaxx'), 1)
+
+    def test_case_02(self):
+        self.assertEqual(last2('axxxaaxx'), 2)
+
+    def test_case_03(self):
+        self.assertEqual(last2('xxaxxaxxaxx'), 3)
+
+    def test_case_04(self):
+        self.assertEqual(last2('xaxaxaxx'), 0)
+
+    def test_case_05(self):
+        self.assertEqual(last2('xxxx'), 2)
+
+    def test_case_06(self):
+        self.assertEqual(last2('13121312'), 1)
+
+    def test_case_07(self):
+        self.assertEqual(last2('11212'), 1)
+
+    def test_case_08(self):
+        self.assertEqual(last2('13121311'), 0)
+
+    def test_case_09(self):
+        self.assertEqual(last2('1717171'), 2)
+
+    def test_case_10(self):
+        self.assertEqual(last2('hi'), 0)
+
+    def test_case_11(self):
+        self.assertEqual(last2('h'), 0)
+
+    def test_case_12(self):
+        self.assertEqual(last2(''), 0)
+
+
+class TestArrayCount9(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(array_count9([1, 2, 9]), 1)
+
+    def test_case_01(self):
+        self.assertEqual(array_count9([1, 9, 9]), 2)
+
+    def test_case_02(self):
+        self.assertEqual(array_count9([1, 9, 9, 3, 9]), 3)
+
+    def test_case_03(self):
+        self.assertEqual(array_count9([4, 2, 4, 3, 1]), 0)
+
+    def test_case_04(self):
+        self.assertEqual(array_count9([1, 2, 3]), 0)
+
+    def test_case_05(self):
+        self.assertEqual(array_count9([]), 0)
+
+    def test_case_06(self):
+        self.assertEqual(array_count9([9, 2, 4, 3, 1]), 1)
+
+
+class TestArrayFront9(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(array_front9([1, 2, 9, 3, 4]), True)
+
+    def test_case_01(self):
+        self.assertEqual(array_front9([1, 2, 3, 4, 9]), False)
+
+    def test_case_02(self):
+        self.assertEqual(array_front9([1, 2, 3, 4, 5]), False)
+
+    def test_case_03(self):
+        self.assertEqual(array_front9([9, 2, 3]), True)
+
+    def test_case_04(self):
+        self.assertEqual(array_front9([1, 9, 9]), True)
+
+    def test_case_05(self):
+        self.assertEqual(array_front9([1, 2, 3]), False)
+
+    def test_case_06(self):
+        self.assertEqual(array_front9([1, 9]), True)
+
+    def test_case_07(self):
+        self.assertEqual(array_front9([5, 5]), False)
+
+    def test_case_07(self):
+        self.assertEqual(array_front9([2]), False)
+
+    def test_case_08(self):
+        self.assertEqual(array_front9([9]), True)
+
+    def test_case_09(self):
+        self.assertEqual(array_front9([]), False)
+
+    def test_case_10(self):
+        self.assertEqual(array_front9([3, 9, 2, 3, 3]), True)
+
+
+class TestArray123(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(array123([1, 1, 2, 3, 1]), True)
+
+    def test_case_01(self):
+        self.assertEqual(array123([1, 1, 2, 4, 1]), False)
+
+    def test_case_02(self):
+        self.assertEqual(array123([1, 1, 2, 1, 2, 3]), True)
+
+    def test_case_03(self):
+        self.assertEqual(array123([1, 1, 2, 1, 2, 1]), False)
+
+    def test_case_04(self):
+        self.assertEqual(array123([1, 2, 3, 1, 2, 3]), True)
+
+    def test_case_05(self):
+        self.assertEqual(array123([1, 2, 3]), True)
+
+    def test_case_06(self):
+        self.assertEqual(array123([1, 1, 1]), False)
+
+    def test_case_07(self):
+        self.assertEqual(array123([1, 2]), False)
+
+    def test_case_08(self):
+        self.assertEqual(array123([1]), False)
+
+    def test_case_09(self):
+        self.assertEqual(array123([]), False)
+
+
+class TestStringMatch(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(string_match('xxcaazz', 'xxbaaz'), 3)
+
+    def test_case_01(self):
+        self.assertEqual(string_match('abc', 'abc'), 2)
+
+    def test_case_02(self):
+        self.assertEqual(string_match('abc', 'axc'), 0)
+
+    def test_case_03(self):
+        self.assertEqual(string_match('hello', 'he'), 1)
+
+    def test_case_04(self):
+        self.assertEqual(string_match('he', 'hello'), 1)
+
+    def test_case_05(self):
+        self.assertEqual(string_match('h', 'hello'), 0)
+
+    def test_case_06(self):
+        self.assertEqual(string_match('', 'hello'), 0)
+
+    def test_case_07(self):
+        self.assertEqual(string_match('aabbccdd', 'abbbxxd'), 1)
+
+    def test_case_08(self):
+        self.assertEqual(string_match('aaxxaaxx', 'iaxxai'), 3)
+
+    def test_case_09(self):
+        self.assertEqual(string_match('iaxxai', 'aaxxaaxx'), 3)

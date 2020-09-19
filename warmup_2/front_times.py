@@ -40,7 +40,7 @@ class TestFrontTimes(unittest.TestCase):
     def test_case_05(self):
         self.assertEqual(front_times('', 4), '')
 
-    def test_case_02(self):
+    def test_case_06(self):
         self.assertEqual(front_times('Abc', 0), '')
 
 

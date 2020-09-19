@@ -15,8 +15,9 @@ array123([1, 1, 2, 4, 1]) → False
 array123([1, 1, 2, 1, 2, 3]) → True
 """
 
+
 def array123(nums):
-  pass
+    return str([1, 2, 3])[1:-1] in str(nums)
 
 
 class TestArray123(unittest.TestCase):
@@ -29,13 +30,27 @@ class TestArray123(unittest.TestCase):
     def test_case_02(self):
         self.assertEqual(array123([1, 1, 2, 1, 2, 3]), True)
 
+    def test_case_03(self):
+        self.assertEqual(array123([1, 1, 2, 1, 2, 1]), False)
 
+    def test_case_04(self):
+        self.assertEqual(array123([1, 2, 3, 1, 2, 3]), True)
+
+    def test_case_05(self):
+        self.assertEqual(array123([1, 2, 3]), True)
+
+    def test_case_06(self):
+        self.assertEqual(array123([1, 1, 1]), False)
+
+    def test_case_07(self):
+        self.assertEqual(array123([1, 2]), False)
+
+    def test_case_08(self):
+        self.assertEqual(array123([1]), False)
+
+    def test_case_09(self):
+        self.assertEqual(array123([]), False)
 
 
 if __name__ == "__main__":
     unittest.main()
-
-
-
-
-

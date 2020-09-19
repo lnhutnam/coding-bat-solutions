@@ -22,6 +22,7 @@ def array_count9(nums):
         count += 1 if num == 9 else 0
     return count
 
+
 class TestArrayCount9(unittest.TestCase):
     def test_case_00(self):
         self.assertEqual(array_count9([1, 2, 9]), 1)
@@ -31,6 +32,18 @@ class TestArrayCount9(unittest.TestCase):
 
     def test_case_02(self):
         self.assertEqual(array_count9([1, 9, 9, 3, 9]), 3)
+
+    def test_case_03(self):
+        self.assertEqual(array_count9([4, 2, 4, 3, 1]), 0)
+
+    def test_case_04(self):
+        self.assertEqual(array_count9([1, 2, 3]), 0)
+
+    def test_case_05(self):
+        self.assertEqual(array_count9([]), 0)
+
+    def test_case_06(self):
+        self.assertEqual(array_count9([9, 2, 4, 3, 1]), 1)
 
 
 if __name__ == "__main__":

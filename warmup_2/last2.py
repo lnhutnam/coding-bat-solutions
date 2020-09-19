@@ -18,7 +18,16 @@ last2('axxxaaxx') → 2
 
 
 def last2(str):
-    pass
+    if len(str) < 2:
+        return 0
+    i = 0
+    count = 0
+    while i < len(str) - 2:
+        sub = str[i: i + 2]
+        if sub == str[len(str)-2:]:
+            count += 1
+        i += 1
+    return count
 
 
 class TestLast2(unittest.TestCase):
@@ -30,6 +39,36 @@ class TestLast2(unittest.TestCase):
 
     def test_case_02(self):
         self.assertEqual(last2('axxxaaxx'), 2)
+
+    def test_case_03(self):
+        self.assertEqual(last2('xxaxxaxxaxx'), 3)
+
+    def test_case_04(self):
+        self.assertEqual(last2('xaxaxaxx'), 0)
+
+    def test_case_05(self):
+        self.assertEqual(last2('xxxx'), 2)
+
+    def test_case_06(self):
+        self.assertEqual(last2('13121312'), 1)
+
+    def test_case_07(self):
+        self.assertEqual(last2('11212'), 1)
+
+    def test_case_08(self):
+        self.assertEqual(last2('13121311'), 0)
+
+    def test_case_09(self):
+        self.assertEqual(last2('1717171'), 2)
+
+    def test_case_10(self):
+        self.assertEqual(last2('hi'), 0)
+
+    def test_case_11(self):
+        self.assertEqual(last2('h'), 0)
+
+    def test_case_12(self):
+        self.assertEqual(last2(''), 0)
 
 
 if __name__ == "__main__":
