@@ -52,7 +52,16 @@ from solutions.solutions import make_chocolate
 
 # string 1
 from solutions.solutions import hello_name
-
+from solutions.solutions import make_abba
+from solutions.solutions import make_tags
+from solutions.solutions import make_out_word
+from solutions.solutions import extra_end
+from solutions.solutions import first_two
+from solutions.solutions import first_half
+from solutions.solutions import without_end
+from solutions.solutions import combo_string
+from solutions.solutions import non_start
+from solutions.solutions import left2
 
 # string 2
 
@@ -1430,6 +1439,257 @@ class TestHelloName(unittest.TestCase):
     def test_case_09(self):
         self.assertEqual(hello_name('Hello'), 'Hello Hello!')
 
+
+class TestMakeAbba(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(make_abba('Hi', 'Bye'), 'HiByeByeHi')
+
+    def test_case_01(self):
+        self.assertEqual(make_abba('Yo', 'Alice'), 'YoAliceAliceYo')
+
+    def test_case_02(self):
+        self.assertEqual(make_abba('What', 'Up'), 'WhatUpUpWhat')
+
+    def test_case_03(self):
+        self.assertEqual(make_abba('aaa', 'bbb'), 'aaabbbbbbaaa')
+
+    def test_case_04(self):
+        self.assertEqual(make_abba('x', ''), 'xx')
+
+    def test_case_05(self):
+        self.assertEqual(make_abba('', 'y'), 'yy')
+
+    def test_case_06(self):
+        self.assertEqual(make_abba('Bo', 'Ya'), 'BoYaYaBo')
+
+    def test_case_07(self):
+        self.assertEqual(make_abba('Ya', 'Ya'), 'YaYaYaYa')
+
+    def test_case_08(self):
+        self.assertEqual(make_abba('x', 'y'), 'xyyx')
+
+
+class TestMakeTags(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(make_tags('i', 'Yay'), '<i>Yay</i>')
+
+    def test_case_01(self):
+        self.assertEqual(make_tags('i', 'Hello'), '<i>Hello</i>')
+
+    def test_case_02(self):
+        self.assertEqual(make_tags('cite', 'Yay'), '<cite>Yay</cite>')
+
+    def test_case_03(self):
+        self.assertEqual(make_tags('address', 'here'),
+                         '<address>here</address>')
+
+    def test_case_04(self):
+        self.assertEqual(make_tags('body', 'Heart'), '<body>Heart</body>')
+
+    def test_case_05(self):
+        self.assertEqual(make_tags('i', 'i'), 	'<i>i</i>')
+
+    def test_case_06(self):
+        self.assertEqual(make_tags('i', ''), '<i></i>')
+
+
+class TestMakeOutWord(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(make_out_word('<<>>', 'Yay'), '<<Yay>>')
+
+    def test_case_01(self):
+        self.assertEqual(make_out_word('<<>>', 'WooHoo'), '<<WooHoo>>')
+
+    def test_case_02(self):
+        self.assertEqual(make_out_word('[[]]', 'word'), '[[word]]')
+
+    def test_case_03(self):
+        self.assertEqual(make_out_word('HHoo', 'Hello'), 'HHHellooo')
+
+    def test_case_04(self):
+        self.assertEqual(make_out_word('abyz', 'YAY'), 'abYAYyz')
+
+
+class TestExtraEnd(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(extra_end('Hello'), 'lololo')
+
+    def test_case_01(self):
+        self.assertEqual(extra_end('ab'), 'ababab')
+
+    def test_case_02(self):
+        self.assertEqual(extra_end('Hi'), 'HiHiHi')
+
+    def test_case_03(self):
+        self.assertEqual(extra_end('Candy'), 'dydydy')
+
+    def test_case_04(self):
+        self.assertEqual(extra_end('Code'), 'dedede')
+
+
+class TestFirstTwo(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(first_two('Hello'), 'He')
+
+    def test_case_01(self):
+        self.assertEqual(first_two('abcdefg'), 'ab')
+
+    def test_case_02(self):
+        self.assertEqual(first_two('ab'), 'ab')
+
+    def test_case_03(self):
+        self.assertEqual(first_two('a'), 'a')
+
+    def test_case_04(self):
+        self.assertEqual(first_two(''), '')
+
+    def test_case_05(self):
+        self.assertEqual(first_two('Kitten'), 'Ki')
+
+    def test_case_06(self):
+        self.assertEqual(first_two('hi'), 'hi')
+
+    def test_case_07(self):
+        self.assertEqual(first_two('hiya'), 'hi')
+
+
+class TestFirstHalf(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(first_half('WooHoo'), 'Woo')
+
+    def test_case_01(self):
+        self.assertEqual(first_half('HelloThere'), 'Hello')
+
+    def test_case_02(self):
+        self.assertEqual(first_half('abcdef'), 'abc')
+
+    def test_case_03(self):
+        self.assertEqual(first_half('ab'), 'a')
+
+    def test_case_04(self):
+        self.assertEqual(first_half(''), '')
+
+    def test_case_05(self):
+        self.assertEqual(first_half('0123456789'), '01234')
+
+    def test_case_06(self):
+        self.assertEqual(first_half('kitten'), 'kit')
+
+
+class TestWithoutEnd(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(without_end('Hello'), 'ell')
+
+    def test_case_01(self):
+        self.assertEqual(without_end('java'), 'av')
+
+    def test_case_02(self):
+        self.assertEqual(without_end('coding'), 'odin')
+
+    def test_case_03(self):
+        self.assertEqual(without_end('code'), 'od')
+
+    def test_case_04(self):
+        self.assertEqual(without_end('ab'), '')
+
+    def test_case_05(self):
+        self.assertEqual(without_end('Chocolate!'), 'hocolate')
+
+    def test_case_06(self):
+        self.assertEqual(without_end('kitten'), 'itte')
+
+    def test_case_07(self):
+        self.assertEqual(without_end('woohoo'), 'ooho')
+
+
+class TestComboString(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(combo_string('Hello', 'hi'), 'hiHellohi')
+
+    def test_case_01(self):
+        self.assertEqual(combo_string('hi', 'Hello'), 'hiHellohi')
+
+    def test_case_02(self):
+        self.assertEqual(combo_string('aaa', 'b'), 'baaab')
+
+    def test_case_03(self):
+        self.assertEqual(combo_string('b', 'aaa'), 'baaab')
+
+    def test_case_04(self):
+        self.assertEqual(combo_string('aaa', ''), 'aaa')
+
+    def test_case_05(self):
+        self.assertEqual(combo_string('', 'bb'), 'bb')
+
+    def test_case_06(self):
+        self.assertEqual(combo_string('aaa', '1234'), 'aaa1234aaa')
+
+    def test_case_07(self):
+        self.assertEqual(combo_string('aaa', 'bb'), 'bbaaabb')
+
+    def test_case_08(self):
+        self.assertEqual(combo_string('a', 'bb'), 'abba')
+
+    def test_case_09(self):
+        self.assertEqual(combo_string('bb', 'a'), 'abba')
+
+    def test_case_10(self):
+        self.assertEqual(combo_string('xyz', 'ab'), 'abxyzab')
+
+
+class TestNonstart(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(non_start('Hello', 'There'), 'ellohere')
+
+    def test_case_01(self):
+        self.assertEqual(non_start('java', 'code'), 'avaode')
+
+    def test_case_02(self):
+        self.assertEqual(non_start('shotl', 'java'), 'hotlava')
+
+    def test_case_03(self):
+        self.assertEqual(non_start('ab', 'xy'), 'by')
+
+    def test_case_04(self):
+        self.assertEqual(non_start('x', 'ac'), 'c')
+
+    def test_case_05(self):
+        self.assertEqual(non_start('a', 'x'), '')
+
+    def test_case_06(self):
+        self.assertEqual(non_start('kit', 'kat'), 'itat')
+
+    def test_case_07(self):
+        self.assertEqual(non_start('mart', 'dart'), 'artart')
+
+    def test_case_08(self):
+        self.assertEqual(non_start('ab', 'x'), 'b')
+
+
+class TestLeft2(unittest.TestCase):
+    def test_case_00(self):
+        self.assertEqual(left2('Hello'), 'lloHe')
+
+    def test_case_01(self):
+        self.assertEqual(left2('java'), 'vaja')
+
+    def test_case_02(self):
+        self.assertEqual(left2('Hi'), 'Hi')
+
+    def test_case_03(self):
+        self.assertEqual(left2('code'), 'deco')
+
+    def test_case_04(self):
+        self.assertEqual(left2('cat'), 'tca')
+
+    def test_case_05(self):
+        self.assertEqual(left2('12345'), '34512')
+
+    def test_case_06(self):
+        self.assertEqual(left2('Chocolate'), 'ocolateCh')
+
+    def test_case_07(self):
+        self.assertEqual(left2('bricks'), 'icksbr')
 
 # string 2 tesing
 # =======================================================================================================================================
